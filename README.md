@@ -55,13 +55,13 @@ TAG_BYTES      := 32
 1. Split the key into an encryption key and an authentication key.
    
    ```
-   encKey := BLAKE3.keyedHash(key, DOMAIN_ENCRYPT || nonce[0:20])
-   authKey := BLAKE3.keyedHash(key, DOMAIN_AUTH || nonce[0:20])
+   encKey := BLAKE3.keyedHash(key, DOMAIN_ENCRYPT || nonce[0:19])
+   authKey := BLAKE3.keyedHash(key, DOMAIN_AUTH || nonce[0:19])
    ```
 2. Encrypt the message:
    
    ```
-   C := ChaCha20.encrypt(plaintext, nonce[20:32], encKey, block_counter = 0)
+   C := ChaCha20.encrypt(plaintext, nonce[20:31], encKey, block_counter = 0)
    ```
 3. Calculate the authentication tag:
    
@@ -75,8 +75,8 @@ TAG_BYTES      := 32
 1. Split the key into an encryption key and an authentication key.
    
    ```
-   encKey := BLAKE3.keyedHash(key, DOMAIN_ENCRYPT || nonce[0:20])
-   authKey := BLAKE3.keyedHash(key, DOMAIN_AUTH || nonce[0:20])
+   encKey := BLAKE3.keyedHash(key, DOMAIN_ENCRYPT || nonce[0:19])
+   authKey := BLAKE3.keyedHash(key, DOMAIN_AUTH || nonce[0:19])
    ```
 2. Realculate the authentication tag:
    
@@ -87,6 +87,6 @@ TAG_BYTES      := 32
 4. Decrypt the message:
    
    ```
-   P := ChaCha20.decrypt(C, nonce[20:32], encKey, block_counter = 0)
+   P := ChaCha20.decrypt(C, nonce[20:31], encKey, block_counter = 0)
    ```
 5. Return the decrypted plaintext.
