@@ -1,10 +1,12 @@
 # cAEAD - Committing AEAD
 
-Key-Committing AEAD with ChaCha20 and BLAKE3.
+Committing AEAD with ChaCha20 and BLAKE3.
 
 > **Warning:** This is an experiment created by Soatok for fun. **Don't use it.**
 >
 > ![Soatok disapproves of using this](https://soatok.files.wordpress.com/2020/09//soatoktelegrams2020-09.png)
+
+#### Make sure you [read the blog post that accompanies this repository](https://soatok.blog/2020/09/09/designing-new-cryptography-for-non-standard-threat-models/).
 
 ## What does this do?
 
