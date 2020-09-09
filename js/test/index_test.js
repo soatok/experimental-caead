@@ -33,7 +33,7 @@ describe('Public API', function() {
         const aad = new Uint8Array(0);
         const ct = await crypto_caead_encrypt(pt, nonce, key, aad);
         const expectedHex =
-            '347fe29328ff39b1aa915ab6b7277466424160130eafea489c5fc9cfda77358e';
+            'ae9c798b04ff9842d7acd1783c75456fd95f70a733ba49bee4f866284f9efe5b';
         expect(expectedHex).to.be.equal(Buffer.from(ct).toString('hex'));
     });
 
@@ -50,7 +50,7 @@ describe('Public API', function() {
         const aad = new Uint8Array([]);
         const ct = await crypto_caead_encrypt(pt, nonce, key, aad);
         const expectedHex =
-            'b3d4e7301ff7f0698a65cead1453a8da205d8b729de29c247ba6811c9cfebe01';
+            'dc28ec9b28082f605603d013958aa4f549b526266f851cc8c5857b6fec331fda';
         expect(expectedHex).to.be.equal(Buffer.from(ct).toString('hex'));
     });
 
@@ -87,7 +87,7 @@ describe('Public API', function() {
         const aad = new Uint8Array([]);
         const ct = await crypto_caead_encrypt(pt, nonce, key, aad);
         const expectedHex =
-            '763ca803b76441c6d96bbbc293de022711c08225538eb7bb04131030b371e0ae' +
+            '2d538ba4c22d86274fcd4751f086dd599fc4f04b884d932244fda81bb075ce4e' +
             'fe2e2ec7a355abb6e7882de5f8abf526c74be8c743c0f977bc26053389de51e8' +
             'adc156033dfb201d0965e88d4ed9e73b518b8da326786b5b2a9c9ea3522f94c7' +
             'd2b64d10fc9ce1cd359769552b6e5ebfe1e57b604c95cd2e360d2da16b3caf0a' +
@@ -119,7 +119,7 @@ describe('Public API', function() {
         ]);
         const ct = await crypto_caead_encrypt(pt, nonce, key, aad);
         const expectedHex =
-            'b9889b3b140884b9efe803e542084e3d019eae7778b4f2936b1679bc8a0039b0';
+            '6324c31908d5234b9e8c8dad7d0fdcfab8c86a7c8b18c8de37134d0089acbc13';
         expect(expectedHex).to.be.equal(Buffer.from(ct).toString('hex'));
     });
 
@@ -161,7 +161,7 @@ describe('Public API', function() {
         ]);
         const ct = await crypto_caead_encrypt(pt, nonce, key, aad);
         const expectedHex =
-            'e6128c9a64ff6e241d1bf8ade8ecfaab80d0df2c588964431290b8a21c85043f' +
+            '056cbdb99f4a34545a3725445ef972fcccbc734348be156b4b39dfc65e7e3a8b' +
             'fe2e2ec7a355abb6e7882de5f8abf526c74be8c743c0f977bc26053389de51e8' +
             'adc156033dfb201d0965e88d4ed9e73b518b8da326786b5b2a9c9ea3522f94c7' +
             'd2b64d10fc9ce1cd359769552b6e5ebfe1e57b604c95cd2e360d2da16b3caf0a' +
