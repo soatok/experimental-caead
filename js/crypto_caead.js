@@ -37,7 +37,7 @@ async function crypto_caead_chacha20blake3_encrypt(
     const cipherLength = store64le(cipher.length);
     const mac = blake3.keyedHash(
         authKey,
-        concatUint8Array(aad, aadLength, cipher, cipherLength)
+        concatUint8Array(aad, cipher, aadLength, cipherLength)
     );
     return [cipher, mac];
 }
@@ -65,7 +65,7 @@ async function crypto_caead_chacha20blake3_decrypt(
     const cipherLength = store64le(cipher.length);
     const calc = blake3.keyedHash(
         authKey,
-        concatUint8Array(aad, aadLength, cipher, cipherLength)
+        concatUint8Array(aad, cipher, aadLength, cipherLength)
     );
     if (!crypto.timingSafeEqual(tag, calc)) {
         throw new Error('Invalid authentication tag');

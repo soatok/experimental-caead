@@ -87,7 +87,7 @@ describe('Public API', function() {
         const aad = new Uint8Array([]);
         const ct = await crypto_caead_encrypt(pt, nonce, key, aad);
         const expectedHex =
-            '2d538ba4c22d86274fcd4751f086dd599fc4f04b884d932244fda81bb075ce4e' +
+            '2fc80f8922a108718c6b78ada014c7edd11bf58fc879f4ca5a6b2f3925c813f8' +
             'fe2e2ec7a355abb6e7882de5f8abf526c74be8c743c0f977bc26053389de51e8' +
             'adc156033dfb201d0965e88d4ed9e73b518b8da326786b5b2a9c9ea3522f94c7' +
             'd2b64d10fc9ce1cd359769552b6e5ebfe1e57b604c95cd2e360d2da16b3caf0a' +
@@ -161,7 +161,7 @@ describe('Public API', function() {
         ]);
         const ct = await crypto_caead_encrypt(pt, nonce, key, aad);
         const expectedHex =
-            '056cbdb99f4a34545a3725445ef972fcccbc734348be156b4b39dfc65e7e3a8b' +
+            '4a29b2418efbef1e0a7b6576a363b3ef05beb42fd789c0b9b371866f6c66dfd9' +
             'fe2e2ec7a355abb6e7882de5f8abf526c74be8c743c0f977bc26053389de51e8' +
             'adc156033dfb201d0965e88d4ed9e73b518b8da326786b5b2a9c9ea3522f94c7' +
             'd2b64d10fc9ce1cd359769552b6e5ebfe1e57b604c95cd2e360d2da16b3caf0a' +
