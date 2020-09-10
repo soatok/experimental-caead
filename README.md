@@ -66,7 +66,7 @@ TAG_BYTES      := 32
 3. Calculate the authentication tag:
    
    ```
-   T := BLAKE3.keyedHash(authKey, aad || STORE64LE(aad.length) || C)
+   T := BLAKE3.keyedHash(authKey, aad || C || STORE64LE(aad.length) || STORE64LE(C.length))
    ```
 4. Return `T || C`
 
@@ -81,7 +81,7 @@ TAG_BYTES      := 32
 2. Realculate the authentication tag:
    
    ```
-   T' := BLAKE3.keyedHash(authKey, aad || STORE64LE(aad.length) || C)
+   T' := BLAKE3.keyedHash(authKey, aad || C || STORE64LE(aad.length) || STORE64LE(C.length))
    ```
 3. Compare T with T' in constant-time. If it fails, abort.
 4. Decrypt the message:
